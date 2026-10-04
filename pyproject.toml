@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "azure-portal-mcp"
+version = "0.1.0"
+description = "MCP server for full Azure Portal and resource management"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Azure Portal MCP", email = "dev@example.com"}
+]
+
+dependencies = [
+    "mcp>=0.1.0",
+    "azure-identity>=1.15.0",
+    "azure-mgmt-resource>=23.1.0",
+    "azure-mgmt-compute>=30.7.0",
+    "azure-mgmt-storage>=21.1.0",
+    "azure-mgmt-network>=24.1.0",
+    "azure-mgmt-appservice>=22.0.0",
+    "azure-mgmt-sql>=23.0.0",
+    "azure-mgmt-cosmosdb>=9.5.0",
+    "azure-mgmt-keyvault>=10.3.0",
+    "azure-mgmt-monitor>=6.0.0",
+    "azure-storage-blob>=12.19.0",
+    "msgspec>=0.18.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+    "types-python-dateutil"
+]
+
+[project.scripts]
+azure-portal-mcp = "azure_portal_mcp.server:main"
